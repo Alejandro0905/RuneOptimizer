@@ -1,0 +1,188 @@
+{
+    "Yin-Yang Pickaxe": {
+        "pickaxe_damage": 1100,
+        "pickaxe_speed_bonus": 0,
+        "pickaxe_luck": 88,
+        "rune_slots": 4
+    },
+    "Spirit Pickaxe": {
+        "pickaxe_damage": 777,
+        "pickaxe_speed_bonus": 0,
+        "pickaxe_luck": 85,
+        "rune_slots": 4
+    },
+    "Kitsune Pickaxe": {
+        "pickaxe_damage": 1000,
+        "pickaxe_speed_bonus": 10,
+        "pickaxe_luck": 85,
+        "rune_slots": 3
+    },
+    "Oni Pickaxe": {
+        "pickaxe_damage": 888,
+        "pickaxe_speed_bonus": -10,
+        "pickaxe_luck": 82,
+        "rune_slots": 3
+    },
+    "Holy Pickaxe": {
+        "pickaxe_damage": 740,
+        "pickaxe_speed_bonus": 5,
+        "pickaxe_luck": 74,
+        "rune_slots": 3
+    },
+    "Wolf Pickaxe": {
+        "pickaxe_damage": 600,
+        "pickaxe_speed_bonus": 15,
+        "pickaxe_luck": 70,
+        "rune_slots": 2
+    },
+    "Sakura Pickaxe": {
+        "pickaxe_damage": 480,
+        "pickaxe_speed_bonus": -5,
+        "pickaxe_luck": 65,
+        "rune_slots": 2
+    },
+    "Bamboo Pickaxe": {
+        "pickaxe_damage": 370,
+        "pickaxe_speed_bonus": 5,
+        "pickaxe_luck": 60,
+        "rune_slots": 1
+    },
+    "Heavenly Pickaxe": {
+        "pickaxe_damage": 725,
+        "pickaxe_speed_bonus": 0,
+        "pickaxe_luck": 85,
+        "rune_slots": 4
+    },
+    "Dragon Head Pickaxe": {
+        "pickaxe_damage": 750,
+        "pickaxe_speed_bonus": 10,
+        "pickaxe_luck": 78,
+        "rune_slots": 4
+    },
+    "Prismatic Pickaxe": {
+        "pickaxe_damage": 650,
+        "pickaxe_speed_bonus": 10,
+        "pickaxe_luck": 72,
+        "rune_slots": 4
+    },
+    "Void Pickaxe": {
+        "pickaxe_damage": 550,
+        "pickaxe_speed_bonus": -5,
+        "pickaxe_luck": 68,
+        "rune_slots": 3
+    },
+    "Frost Pickaxe": {
+        "pickaxe_damage": 420,
+        "pickaxe_speed_bonus": 5,
+        "pickaxe_luck": 62,
+        "rune_slots": 3
+    },
+    "Snow Pickaxe": {
+        "pickaxe_damage": 320,
+        "pickaxe_speed_bonus": 10,
+        "pickaxe_luck": 58,
+        "rune_slots": 3
+    },
+    "Mist Pickaxe": {
+        "pickaxe_damage": 250,
+        "pickaxe_speed_bonus": 15,
+        "pickaxe_luck": 55,
+        "rune_slots": 2
+    },
+    "Aqua Pickaxe": {
+        "pickaxe_damage": 200,
+        "pickaxe_speed_bonus": 5,
+        "pickaxe_luck": 52,
+        "rune_slots": 2
+    },
+    "Tungsten Pickaxe": {
+        "pickaxe_damage": 150,
+        "pickaxe_speed_bonus": -15,
+        "pickaxe_luck": 48,
+        "rune_slots": 2
+    },
+    "Demonic Pickaxe": {
+        "pickaxe_damage": 180,
+        "pickaxe_speed_bonus": -10,
+        "pickaxe_luck": 51,
+        "rune_slots": 3
+    },
+    "Magma Pickaxe": {
+        "pickaxe_damage": 135,
+        "pickaxe_speed_bonus": 0,
+        "pickaxe_luck": 46,
+        "rune_slots": 2
+    },
+    "Lightite Pickaxe": {
+        "pickaxe_damage": 100,
+        "pickaxe_speed_bonus": 30,
+        "pickaxe_luck": 45,
+        "rune_slots": 2
+    },
+    "Mythril Pickaxe": {
+        "pickaxe_damage": 80,
+        "pickaxe_speed_bonus": 0,
+        "pickaxe_luck": 43,
+        "rune_slots": 2
+    },
+    "Uranium Pickaxe": {
+        "pickaxe_damage": 67,
+        "pickaxe_speed_bonus": 0,
+        "pickaxe_luck": 41,
+        "rune_slots": 2
+    },
+    "Titanium Pickaxe": {
+        "pickaxe_damage": 55,
+        "pickaxe_speed_bonus": 0,
+        "pickaxe_luck": 38,
+        "rune_slots": 2
+    },
+    "Cobalt Pickaxe": {
+        "pickaxe_damage": 40,
+        "pickaxe_speed_bonus": 0,
+        "pickaxe_luck": 35,
+        "rune_slots": 2
+    },
+    "Arcane Pickaxe": {
+        "pickaxe_damage": 115,
+        "pickaxe_speed_bonus": 10,
+        "pickaxe_luck": 50,
+        "rune_slots": 3
+    },
+    "Platinum Pickaxe": {
+        "pickaxe_damage": 24,
+        "pickaxe_speed_bonus": 0,
+        "pickaxe_luck": 25,
+        "rune_slots": 2
+    },
+    "Stonewake's Pickaxe": {
+        "pickaxe_damage": 33,
+        "pickaxe_speed_bonus": -30,
+        "pickaxe_luck": 10,
+        "rune_slots": 3
+    },
+    "Golden Pickaxe": {
+        "pickaxe_damage": 16,
+        "pickaxe_speed_bonus": 0,
+        "pickaxe_luck": 15,
+        "rune_slots": 1
+    },
+    "Iron Pickaxe": {
+        "pickaxe_damage": 10,
+        "pickaxe_speed_bonus": 0,
+        "pickaxe_luck": 5,
+        "rune_slots": 0
+    },
+    "Bronze Pickaxe": {
+        "pickaxe_damage": 7,
+        "pickaxe_speed_bonus": 0,
+        "pickaxe_luck": 0,
+        "rune_slots": 0
+    },
+    "Stone Pickaxe": {
+        "pickaxe_damage": 4,
+        "pickaxe_speed_bonus": 0,
+        "pickaxe_luck": 0,
+        "rune_slots": 0
+    }
+}

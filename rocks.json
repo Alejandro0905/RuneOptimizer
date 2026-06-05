@@ -1,0 +1,617 @@
+{
+    "pebble": {
+        "display_name": "Pebble",
+        "hp_rock": 14,
+        "rock_luck": 0,
+        "ore_count": [1],
+        "ores": [
+            "stone",
+            "sand_stone",
+            "copper",
+            "iron",
+            "poopite"
+        ],
+        "world": 1
+    },
+    "rock": {
+        "display_name": "Rock",
+        "hp_rock": 45,
+        "rock_luck": 0.5,
+        "ore_count": [1, 2],
+        "ores": [
+            "sand_stone",
+            "copper",
+            "iron",
+            "tin",
+            "silver",
+            "poopite",
+            "bananite",
+            "cardboardite",
+            "mushroomite"
+        ],
+        "world": 1
+    },
+    "boulder": {
+        "display_name": "Boulder",
+        "hp_rock": 100,
+        "rock_luck": 1,
+        "ore_count": [2, 3],
+        "ores": [
+            "sand_stone",
+            "copper",
+            "iron",
+            "tin",
+            "silver",
+            "gold",
+            "platinum",
+            "poopite",
+            "bananite",
+            "cardboardite",
+            "mushroomite",
+            "aite"
+        ],
+        "world": 1
+    },
+    "lucky_block": {
+        "display_name": "Lucky Block",
+        "hp_rock": 10000,
+        "rock_luck": 100,
+        "ore_count": [1],
+        "ores": [
+            "fichillium"
+        ],
+        "world": 1
+    },
+    "basalt_rock": {
+        "display_name": "Basalt Rock",
+        "hp_rock": 250,
+        "rock_luck": 5,
+        "ore_count": [1, 2],
+        "ores": [
+            "silver",
+            "gold",
+            "platinum",
+            "cobalt",
+            "titanium",
+            "lapis_lazuli",
+            "eye_ore"
+        ],
+        "world": 2
+    },
+    "basalt_core": {
+        "display_name": "Basalt Core",
+        "hp_rock": 750,
+        "rock_luck": 7,
+        "ore_count": [2, 3],
+        "ores": [
+            "cobalt",
+            "titanium",
+            "lapis_lazuli",
+            "quartz",
+            "amethyst",
+            "topaz",
+            "diamond",
+            "sapphire",
+            "cuprite",
+            "emerald",
+            "eye_ore"
+        ],
+        "world": 2
+    },
+    "basalt_vein": {
+        "display_name": "Basalt Vein",
+        "hp_rock": 2750,
+        "rock_luck": 8,
+        "ore_count": [3, 4],
+        "ores": [
+            "quartz",
+            "amethyst",
+            "topaz",
+            "diamond",
+            "sapphire",
+            "cuprite",
+            "emerald",
+            "ruby",
+            "rivalite",
+            "uranium",
+            "mythril",
+            "eye_ore",
+            "lightite"
+        ],
+        "world": 2
+    },
+    "volcanic_rock": {
+        "display_name": "Volcanic Rock",
+        "hp_rock": 4500,
+        "rock_luck": 8,
+        "ore_count": [2, 4],
+        "ores": [
+            "volcanic_rock_ore",
+            "topaz",
+            "cuprite",
+            "rivalite",
+            "obsidian",
+            "eye_ore",
+            "fireite",
+            "magmaite",
+            "demonite",
+            "darkryte"
+        ],
+        "world": 2
+    },
+    "crystals": {
+        "display_name": "Crystals",
+        "hp_rock": 5005,
+        "rock_luck": 5,
+        "ore_count": [1],
+        "ores": [
+            "orange_crystal_ore",
+            "magenta_crystal_ore",
+            "green_crystal_ore",
+            "crimson_crystal_ore",
+            "blue_crystal_ore",
+            "rainbow_crystal_ore",
+            "arcane_crystal_ore"
+        ],
+        "world": 2
+    },
+    "icy_pebble": {
+        "display_name": "Icy Pebble",
+        "hp_rock": 800,
+        "rock_luck": 3.5,
+        "ore_count": [1, 2],
+        "ores": [
+            "tungsten",
+            "sulfur",
+            "pumice",
+            "graphite",
+            "aetherit",
+            "snowite"
+        ],
+        "world": 3
+    },
+    "icy_rock": {
+        "display_name": "Icy Rock",
+        "hp_rock": 2025,
+        "rock_luck": 4.67,
+        "ore_count": [1, 2],
+        "ores": [
+            "tungsten",
+            "sulfur",
+            "pumice",
+            "graphite",
+            "aetherit",
+            "scheelite",
+            "larimar",
+            "neurotite",
+            "snowite",
+            "iceite"
+        ],
+        "world": 3
+    },
+    "icy_boulder": {
+        "display_name": "Icy Boulder",
+        "hp_rock": 4140,
+        "rock_luck": 5.83,
+        "ore_count": [2, 3],
+        "ores": [
+            "tungsten",
+            "sulfur",
+            "pumice",
+            "graphite",
+            "aetherit",
+            "scheelite",
+            "larimar",
+            "neurotite",
+            "frost_fossil",
+            "tide_carve",
+            "velchire",
+            "sanctis",
+            "snowite",
+            "iceite"
+        ],
+        "world": 3
+    },
+    "small_ice_crystal": {
+        "display_name": "Small Ice Crystal",
+        "hp_rock": 7040,
+        "rock_luck": 6.33,
+        "ore_count": [1, 2],
+        "ores": [
+            "aetherit",
+            "scheelite",
+            "larimar",
+            "neurotite",
+            "frost_fossil",
+            "tide_carve",
+            "velchire",
+            "sanctis",
+            "snowite",
+            "mistvein",
+            "lgarite",
+            "voidfractal",
+            "moltenfrost",
+            "crimsonite",
+            "iceite",
+            "suryafal"
+        ],
+        "world": 3
+    },
+    "medium_ice_crystal": {
+        "display_name": "Medium Ice Crystal",
+        "hp_rock": 12600,
+        "rock_luck": 6.83,
+        "ore_count": [2, 3],
+        "ores": [
+            "frost_fossil",
+            "tide_carve",
+            "velchire",
+            "sanctis",
+            "snowite",
+            "mistvein",
+            "lgarite",
+            "voidfractal",
+            "moltenfrost",
+            "crimsonite",
+            "malachite",
+            "aqujade",
+            "cryptex",
+            "galestor",
+            "voidstar",
+            "iceite",
+            "suryafal"
+        ],
+        "world": 3
+    },
+    "large_ice_crystal": {
+        "display_name": "Large Ice Crystal",
+        "hp_rock": 18250,
+        "rock_luck": 7.67,
+        "ore_count": [3, 4],
+        "ores": [
+            "velchire",
+            "sanctis",
+            "snowite",
+            "mistvein",
+            "lgarite",
+            "voidfractal",
+            "moltenfrost",
+            "crimsonite",
+            "malachite",
+            "aqujade",
+            "cryptex",
+            "galestor",
+            "voidstar",
+            "iceite",
+            "etherealite",
+            "suryafal",
+            "gargantuan"
+        ],
+        "world": 3
+    },
+    "floating_crystal": {
+        "display_name": "Floating Crystal",
+        "hp_rock": 66000,
+        "rock_luck": 10.83,
+        "ore_count": [1, 2],
+        "ores": [
+            "velchire",
+            "sanctis",
+            "snowite",
+            "mistvein",
+            "lgarite",
+            "voidfractal",
+            "moltenfrost",
+            "crimsonite",
+            "malachite",
+            "aqujade",
+            "cryptex",
+            "galestor",
+            "voidstar",
+            "iceite",
+            "etherealite",
+            "suryafal",
+            "heavenite",
+            "gargantuan"
+        ],
+        "world": 3
+    },
+    "small_red_crystal": {
+        "display_name": "Small Red Crystal",
+        "hp_rock": 11760,
+        "rock_luck": 7,
+        "ore_count": [1, 2],
+        "ores": [
+            "frost_fossil",
+            "tide_carve",
+            "velchire",
+            "mistvein",
+            "lgarite",
+            "voidfractal",
+            "moltenfrost",
+            "crimsonite",
+            "malachite",
+            "aqujade",
+            "cryptex",
+            "galestor",
+            "frogite",
+            "moon_stone",
+            "voidstar",
+            "etherealite",
+            "suryafal"
+        ],
+        "world": 3
+    },
+    "medium_red_crystal": {
+        "display_name": "Medium Red Crystal",
+        "hp_rock": 17600,
+        "rock_luck": 7.5,
+        "ore_count": [2, 3],
+        "ores": [
+            "frost_fossil",
+            "tide_carve",
+            "velchire",
+            "mistvein",
+            "lgarite",
+            "voidfractal",
+            "moltenfrost",
+            "crimsonite",
+            "malachite",
+            "aqujade",
+            "cryptex",
+            "galestor",
+            "frogite",
+            "moon_stone",
+            "voidstar",
+            "coinite",
+            "etherealite",
+            "gulabite",
+            "suryafal"
+        ],
+        "world": 3
+    },
+    "large_red_crystal": {
+        "display_name": "Large Red Crystal",
+        "hp_rock": 22750,
+        "rock_luck": 8,
+        "ore_count": [3, 4],
+        "ores": [
+            "frost_fossil",
+            "tide_carve",
+            "velchire",
+            "sanctis",
+            "snowite",
+            "mistvein",
+            "lgarite",
+            "voidfractal",
+            "moltenfrost",
+            "crimsonite",
+            "malachite",
+            "aqujade",
+            "cryptex",
+            "galestor",
+            "frogite",
+            "moon_stone",
+            "voidstar",
+            "iceite",
+            "coinite",
+            "etherealite",
+            "gulabite",
+            "duranite",
+            "evil_eye",
+            "suryafal"
+        ],
+        "world": 3
+    },
+    "heart_of_the_island": {
+        "display_name": "Heart of the Island",
+        "hp_rock": 32500,
+        "rock_luck": 9.17,
+        "ore_count": [1],
+        "ores": [
+            "frost_fossil",
+            "tide_carve",
+            "velchire",
+            "sanctis",
+            "mistvein",
+            "lgarite",
+            "voidfractal",
+            "moltenfrost",
+            "crimsonite",
+            "malachite",
+            "aqujade",
+            "cryptex",
+            "galestor",
+            "frogite",
+            "moon_stone",
+            "voidstar",
+            "coinite",
+            "etherealite",
+            "gulabite",
+            "duranite",
+            "evil_eye",
+            "suryafal",
+            "stolen_heart",
+            "heart_of_the_island_ore",
+            "gargantuan"
+        ],
+        "world": 3
+    },
+    "bamboo_pebble": {
+        "display_name": "Bamboo Pebble",
+        "hp_rock": 3840,
+        "rock_luck": 3,
+        "ore_count": [1],
+        "ores": [
+            "bamboo",
+            "root_spire",
+            "water_stone",
+            "earthite",
+            "rock_seed",
+            "shikanite"
+        ],
+        "world": 4
+    },
+    "bamboo_rock": {
+        "display_name": "Bamboo Rock",
+        "hp_rock": 6080,
+        "rock_luck": 4.5,
+        "ore_count": [1, 2],
+        "ores": [
+            "root_spire",
+            "water_stone",
+            "earthite",
+            "melonite",
+            "rock_seed",
+            "wraith",
+            "tigers_eye",
+            "duquack",
+            "onyx"
+        ],
+        "world": 4
+    },
+    "bamboo_boulder": {
+        "display_name": "Bamboo Boulder",
+        "hp_rock": 10240,
+        "rock_luck": 5.25,
+        "ore_count": [2, 3],
+        "ores": [
+            "water_stone",
+            "earthite",
+            "rock_seed",
+            "wraith",
+            "cyanite_jade",
+            "magit",
+            "duquack",
+            "onyx"
+        ],
+        "world": 4
+    },
+    "hana_pebble": {
+        "display_name": "Hana Pebble",
+        "hp_rock": 12600,
+        "rock_luck": 6.25,
+        "ore_count": [1],
+        "ores": [
+            "rock_seed",
+            "wraith",
+            "aurelia_no_ki_ore",
+            "sakuranite",
+            "fruite",
+            "blue_gem_quill",
+            "duquack",
+            "onyx",
+            "lucky_cat"
+        ],
+        "world": 4
+    },
+    "glowy_rock": {
+        "display_name": "Glowy Rock",
+        "hp_rock": 18125,
+        "rock_luck": 7.5,
+        "ore_count": [1, 2],
+        "ores": [
+            "aurelia_no_ki_ore",
+            "sakuranite",
+            "heat_steel",
+            "sealed_curse_ore",
+            "zenstone_ore",
+            "azuryxite_ore",
+            "duquack",
+            "onyx",
+            "lucky_cat"
+        ],
+        "world": 4
+    },
+    "blossom_boulder": {
+        "display_name": "Blossom Boulder",
+        "hp_rock": 22200,
+        "rock_luck": 8.75,
+        "ore_count": [2, 3],
+        "ores": [
+            "heat_steel",
+            "sealed_curse_ore",
+            "sun_stone_ore",
+            "roosite_ore",
+            "meteorite_ore",
+            "heavenly_orb_ore",
+            "duquack",
+            "onyx",
+            "lucky_cat"
+        ],
+        "world": 4
+    },
+    "spirit_rock": {
+        "display_name": "Spirit Rock",
+        "hp_rock": 19937.5,
+        "rock_luck": 7.5,
+        "ore_count": [1, 2],
+        "ores": [
+            "heat_steel",
+            "sealed_curse_ore",
+            "aurelia_no_ki_ore",
+            "roosite_ore",
+            "zenstone_ore",
+            "azuryxite_ore",
+            "duquack",
+            "onyx",
+            "lucky_cat",
+            "ryuseki",
+            "seedheart",
+            "viridite"
+        ],
+        "world": 4
+    },
+    "soul_boulder": {
+        "display_name": "Soul Boulder",
+        "hp_rock": 24420,
+        "rock_luck": 8.75,
+        "ore_count": [2, 3],
+        "ores": [
+            "seedheart",
+            "viridite",
+            "heat_steel",
+            "sealed_curse_ore",
+            "sun_stone_ore",
+            "roosite_ore",
+            "meteorite_ore",
+            "heavenly_orb_ore",
+            "duquack",
+            "lucky_cat",
+            "onyx",
+            "ryuseki"
+        ],
+        "world": 4
+    },
+    "sakura_crystal": {
+        "display_name": "Sakura Crystal",
+        "hp_rock": 22000,
+        "rock_luck": 5,
+        "ore_count": [1, 2],
+        "ores": [
+            "seedheart",
+            "viridite",
+            "ancienite",
+            "dorabell"
+        ],
+        "world": 4
+    },
+    "thunder_core": {
+        "display_name": "Thunder Core",
+        "hp_rock": 26000,
+        "rock_luck": 5,
+        "ore_count": [1, 2],
+        "ores": [
+            "seedheart",
+            "viridite",
+            "ancienite",
+            "dorabell",
+            "kyomutite",
+            "takiseki",
+            "ryuseki",
+            "ceyite",
+            "marblite"
+        ],
+        "world": 4
+    }
+}

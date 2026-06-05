@@ -1,0 +1,522 @@
+{
+    "stone": {
+        "display_name": "Stone",
+        "chance_numerator": 1,
+        "chance_denominator": 1
+    },
+    "sand_stone": {
+        "display_name": "Sand Stone",
+        "chance_numerator": 1,
+        "chance_denominator": 2
+    },
+    "copper": {
+        "display_name": "Copper",
+        "chance_numerator": 1,
+        "chance_denominator": 3
+    },
+    "iron": {
+        "display_name": "Iron",
+        "chance_numerator": 1,
+        "chance_denominator": 5
+    },
+    "tin": {
+        "display_name": "Tin",
+        "chance_numerator": 1,
+        "chance_denominator": 7
+    },
+    "silver": {
+        "display_name": "Silver",
+        "chance_numerator": 1,
+        "chance_denominator": 12
+    },
+    "gold": {
+        "display_name": "Gold",
+        "chance_numerator": 1,
+        "chance_denominator": 16
+    },
+    "platinum": {
+        "display_name": "Platinum",
+        "chance_numerator": 1,
+        "chance_denominator": 28
+    },
+    "bananite": {
+        "display_name": "Bananite",
+        "chance_numerator": 1,
+        "chance_denominator": 30
+    },
+    "cardboardite": {
+        "display_name": "Cardboardite",
+        "chance_numerator": 1,
+        "chance_denominator": 31
+    },
+    "mushroomite": {
+        "display_name": "Mushroomite",
+        "chance_numerator": 1,
+        "chance_denominator": 22
+    },
+    "aite": {
+        "display_name": "Aite",
+        "chance_numerator": 1,
+        "chance_denominator": 44
+    },
+    "poopite": {
+        "display_name": "Poopite",
+        "chance_numerator": 1,
+        "chance_denominator": 131
+    },
+    "fichillium": {
+        "display_name": "Fichillium",
+        "chance_numerator": 1,
+        "chance_denominator": 1
+    },
+    "cobalt": {
+        "display_name": "Cobalt",
+        "chance_numerator": 1,
+        "chance_denominator": 37
+    },
+    "titanium": {
+        "display_name": "Titanium",
+        "chance_numerator": 1,
+        "chance_denominator": 50
+    },
+    "lapis_lazuli": {
+        "display_name": "Lapis Lazuli",
+        "chance_numerator": 1,
+        "chance_denominator": 73
+    },
+    "eye_ore": {
+        "display_name": "Eye Ore",
+        "chance_numerator": 1,
+        "chance_denominator": 1333
+    },
+    "quartz": {
+        "display_name": "Quartz",
+        "chance_numerator": 1,
+        "chance_denominator": 90
+    },
+    "amethyst": {
+        "display_name": "Amethyst",
+        "chance_numerator": 1,
+        "chance_denominator": 115
+    },
+    "topaz": {
+        "display_name": "Topaz",
+        "chance_numerator": 1,
+        "chance_denominator": 143
+    },
+    "diamond": {
+        "display_name": "Diamond",
+        "chance_numerator": 1,
+        "chance_denominator": 192
+    },
+    "sapphire": {
+        "display_name": "Sapphire",
+        "chance_numerator": 1,
+        "chance_denominator": 247
+    },
+    "cuprite": {
+        "display_name": "Cuprite",
+        "chance_numerator": 1,
+        "chance_denominator": 303
+    },
+    "emerald": {
+        "display_name": "Emerald",
+        "chance_numerator": 1,
+        "chance_denominator": 363
+    },
+    "ruby": {
+        "display_name": "Ruby",
+        "chance_numerator": 1,
+        "chance_denominator": 487
+    },
+    "rivalite": {
+        "display_name": "Rivalite",
+        "chance_numerator": 1,
+        "chance_denominator": 569
+    },
+    "uranium": {
+        "display_name": "Uranium",
+        "chance_numerator": 1,
+        "chance_denominator": 777
+    },
+    "mythril": {
+        "display_name": "Mythril",
+        "chance_numerator": 1,
+        "chance_denominator": 813
+    },
+    "lightite": {
+        "display_name": "Lightite",
+        "chance_numerator": 1,
+        "chance_denominator": 3333
+    },
+    "volcanic_rock_ore": {
+        "display_name": "Volcanic Rock Ore",
+        "chance_numerator": 1,
+        "chance_denominator": 55
+    },
+    "obsidian": {
+        "display_name": "Obsidian",
+        "chance_numerator": 1,
+        "chance_denominator": 333
+    },
+    "fireite": {
+        "display_name": "Fireite",
+        "chance_numerator": 1,
+        "chance_denominator": 2187
+    },
+    "magmaite": {
+        "display_name": "Magmaite",
+        "chance_numerator": 1,
+        "chance_denominator": 3003
+    },
+    "demonite": {
+        "display_name": "Demonite",
+        "chance_numerator": 1,
+        "chance_denominator": 3666
+    },
+    "darkryte": {
+        "display_name": "Darkryte",
+        "chance_numerator": 1,
+        "chance_denominator": 6655
+    },
+    "orange_crystal_ore": {
+        "display_name": "Orange Crystal Ore",
+        "chance_numerator": 1,
+        "chance_denominator": 255
+    },
+    "magenta_crystal_ore": {
+        "display_name": "Magenta Crystal Ore",
+        "chance_numerator": 1,
+        "chance_denominator": 255
+    },
+    "green_crystal_ore": {
+        "display_name": "Green Crystal Ore",
+        "chance_numerator": 1,
+        "chance_denominator": 255
+    },
+    "crimson_crystal_ore": {
+        "display_name": "Crimson Crystal Ore",
+        "chance_numerator": 1,
+        "chance_denominator": 255
+    },
+    "blue_crystal_ore": {
+        "display_name": "Blue Crystal Ore",
+        "chance_numerator": 1,
+        "chance_denominator": 255
+    },
+    "rainbow_crystal_ore": {
+        "display_name": "Rainbow Crystal Ore",
+        "chance_numerator": 1,
+        "chance_denominator": 5000
+    },
+    "arcane_crystal_ore": {
+        "display_name": "Arcane Crystal Ore",
+        "chance_numerator": 1,
+        "chance_denominator": 100000
+    },
+    "tungsten": {
+        "display_name": "Tungsten",
+        "chance_numerator": 1,
+        "chance_denominator": 30
+    },
+    "sulfur": {
+        "display_name": "Sulfur",
+        "chance_numerator": 1,
+        "chance_denominator": 36
+    },
+    "pumice": {
+        "display_name": "Pumice",
+        "chance_numerator": 1,
+        "chance_denominator": 44
+    },
+    "graphite": {
+        "display_name": "Graphite",
+        "chance_numerator": 1,
+        "chance_denominator": 52
+    },
+    "aetherit": {
+        "display_name": "Aetherit",
+        "chance_numerator": 1,
+        "chance_denominator": 65
+    },
+    "scheelite": {
+        "display_name": "Scheelite",
+        "chance_numerator": 1,
+        "chance_denominator": 79
+    },
+    "larimar": {
+        "display_name": "Larimar",
+        "chance_numerator": 1,
+        "chance_denominator": 96
+    },
+    "neurotite": {
+        "display_name": "Neurotite",
+        "chance_numerator": 1,
+        "chance_denominator": 115
+    },
+    "frost_fossil": {
+        "display_name": "Frost Fossil",
+        "chance_numerator": 1,
+        "chance_denominator": 137
+    },
+    "tide_carve": {
+        "display_name": "Tide Carve",
+        "chance_numerator": 1,
+        "chance_denominator": 163
+    },
+    "velchire": {
+        "display_name": "Velchire",
+        "chance_numerator": 1,
+        "chance_denominator": 241
+    },
+    "sanctis": {
+        "display_name": "Sanctis",
+        "chance_numerator": 1,
+        "chance_denominator": 305
+    },
+    "snowite": {
+        "display_name": "Snowite",
+        "chance_numerator": 1,
+        "chance_denominator": 721
+    },
+    "iceite": {
+        "display_name": "Iceite",
+        "chance_numerator": 1,
+        "chance_denominator": 1650
+    },
+    "mistvein": {
+        "display_name": "Mistvein",
+        "chance_numerator": 1,
+        "chance_denominator": 437
+    },
+    "lgarite": {
+        "display_name": "Lgarite",
+        "chance_numerator": 1,
+        "chance_denominator": 520
+    },
+    "voidfractal": {
+        "display_name": "Voidfractal",
+        "chance_numerator": 1,
+        "chance_denominator": 576
+    },
+    "moltenfrost": {
+        "display_name": "Moltenfrost",
+        "chance_numerator": 1,
+        "chance_denominator": 667
+    },
+    "crimsonite": {
+        "display_name": "Crimsonite",
+        "chance_numerator": 1,
+        "chance_denominator": 755
+    },
+    "malachite": {
+        "display_name": "Malachite",
+        "chance_numerator": 1,
+        "chance_denominator": 850
+    },
+    "aqujade": {
+        "display_name": "Aqujade",
+        "chance_numerator": 1,
+        "chance_denominator": 888
+    },
+    "cryptex": {
+        "display_name": "Cryptex",
+        "chance_numerator": 1,
+        "chance_denominator": 1010
+    },
+    "galestor": {
+        "display_name": "Galestor",
+        "chance_numerator": 1,
+        "chance_denominator": 1111
+    },
+    "voidstar": {
+        "display_name": "Voidstar",
+        "chance_numerator": 1,
+        "chance_denominator": 1363
+    },
+    "etherealite": {
+        "display_name": "Etherealite",
+        "chance_numerator": 1,
+        "chance_denominator": 1777
+    },
+    "suryafal": {
+        "display_name": "Suryafal",
+        "chance_numerator": 1,
+        "chance_denominator": 8341
+    },
+    "heavenite": {
+        "display_name": "Heavenite",
+        "chance_numerator": 1,
+        "chance_denominator": 26666
+    },
+    "gargantuan": {
+        "display_name": "Gargantuan",
+        "chance_numerator": 1,
+        "chance_denominator": 55555
+    },
+    "frogite": {
+        "display_name": "Frogite",
+        "chance_numerator": 1,
+        "chance_denominator": 1133
+    },
+    "moon_stone": {
+        "display_name": "Moon Stone",
+        "chance_numerator": 1,
+        "chance_denominator": 1328
+    },
+    "coinite": {
+        "display_name": "Coinite",
+        "chance_numerator": 1,
+        "chance_denominator": 2525
+    },
+    "gulabite": {
+        "display_name": "Gulabite",
+        "chance_numerator": 1,
+        "chance_denominator": 1666
+    },
+    "duranite": {
+        "display_name": "Duranite",
+        "chance_numerator": 1,
+        "chance_denominator": 3570
+    },
+    "evil_eye": {
+        "display_name": "Evil Eye",
+        "chance_numerator": 1,
+        "chance_denominator": 5555
+    },
+    "stolen_heart": {
+        "display_name": "Stolen Heart",
+        "chance_numerator": 1,
+        "chance_denominator": 9054
+    },
+    "heart_of_the_island_ore": {
+        "display_name": "Heart of the Island Ore",
+        "chance_numerator": 1,
+        "chance_denominator": 20576
+    },
+    "bamboo": {
+        "display_name": "Bamboo",
+        "chance_numerator": 1,
+        "chance_denominator": 6
+    },
+    "root_spire": {
+        "display_name": "Root Spire",
+        "chance_numerator": 1,
+        "chance_denominator": 19
+    },
+    "water_stone": {
+        "display_name": "Water Stone",
+        "chance_numerator": 1,
+        "chance_denominator": 54
+    },
+    "earthite": {
+        "display_name": "Earthite",
+        "chance_numerator": 1,
+        "chance_denominator": 84
+    },
+    "melonite": {
+        "display_name": "Melonite",
+        "chance_numerator": 1,
+        "chance_denominator": 100
+    },
+    "shikanite": {
+        "display_name": "Shikanite",
+        "chance_numerator": 1,
+        "chance_denominator": 213
+    },
+    "cyanite_jade": {
+        "display_name": "Cyanite Jade",
+        "chance_numerator": 1,
+        "chance_denominator": 242
+    },
+    "magit": {
+        "display_name": "Magit",
+        "chance_numerator": 1,
+        "chance_denominator": 300
+    },
+    "tigers_eye": {
+        "display_name": "Tiger's Eye",
+        "chance_numerator": 1,
+        "chance_denominator": 210
+    },
+    "seedheart": {
+        "display_name": "Seedheart",
+        "chance_numerator": 1,
+        "chance_denominator": 385
+    },
+    "viridite": {
+        "display_name": "Viridite",
+        "chance_numerator": 1,
+        "chance_denominator": 520
+    },
+    "ancienite": {
+        "display_name": "Ancienite",
+        "chance_numerator": 1,
+        "chance_denominator": 950
+    },
+    "kyomutite": {
+        "display_name": "Kyomutite",
+        "chance_numerator": 1,
+        "chance_denominator": 1050
+    },
+    "takiseki": {
+        "display_name": "Takiseki",
+        "chance_numerator": 1,
+        "chance_denominator": 1200
+    },
+    "dorabell": {
+        "display_name": "Dorabell",
+        "chance_numerator": 1,
+        "chance_denominator": 2100
+    },
+    "ryuseki": {
+        "display_name": "Ryuseki",
+        "chance_numerator": 1,
+        "chance_denominator": 2400
+    },
+    "ceyite": {
+        "display_name": "Ceyite",
+        "chance_numerator": 1,
+        "chance_denominator": 3600
+    },
+    "marblite": {
+        "display_name": "Marblite",
+        "chance_numerator": 1,
+        "chance_denominator": 4800
+    },
+    "yetih_heart": {
+        "display_name": "Yeti Heart",
+        "chance_numerator": 1,
+        "chance_denominator": 7407
+    },
+    "golem_heart": {
+        "display_name": "Golem Heart",
+        "chance_numerator": 1,
+        "chance_denominator": 9259
+    },
+    "oni_mask": {
+        "display_name": "Oni Mask",
+        "chance_numerator": 1,
+        "chance_denominator": 666
+    },
+    "kyubite": {
+        "display_name": "Kyubite",
+        "chance_numerator": 1,
+        "chance_denominator": 100
+    },
+    "yin": {
+        "display_name": "Yin",
+        "chance_numerator": 1,
+        "chance_denominator": 333
+    },
+    "yang": {
+        "display_name": "Yang",
+        "chance_numerator": 1,
+        "chance_denominator": 333
+    },
+    "onite": {
+        "display_name": "Onite",
+        "chance_numerator": 1,
+        "chance_denominator": 10
+    }
+}
