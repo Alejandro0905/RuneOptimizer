@@ -322,12 +322,12 @@ class RuneOptimizerApp:
         fungi_potion_luck = 0.15 if getattr(self, 'fungi_potion', False) else 0.0
 
         # Lucky Cat Buff: +5% luck, +5% yield
-        lucky_cat_luck = 0.05 if getattr(self, 'lucky_cat_buff', False) else 0.0
-        lucky_cat_yield = 0.05 if getattr(self, 'lucky_cat_buff', False) else 0.0
+        lucky_cat_luck = 0.15 if getattr(self, 'lucky_cat_buff', False) else 0.0
+        lucky_cat_yield = 0.15 if getattr(self, 'lucky_cat_buff', False) else 0.0
 
         # Starite Buff: +4% luck, +6% yield
-        starite_luck = 0.04 if getattr(self, 'starite_buff', False) else 0.0
-        starite_yield = 0.06 if getattr(self, 'starite_buff', False) else 0.0
+        starite_luck = 0.12 if getattr(self, 'starite_buff', False) else 0.0
+        starite_yield = 0.18 if getattr(self, 'starite_buff', False) else 0.0
         
         # Total boost sums
         total_luck_boost = angel_race_bonus + supporter_gp_bonus + luck_potion_bonus + luck_totem_bonus + fungi_potion_luck + lucky_cat_luck + starite_luck
