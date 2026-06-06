@@ -518,5 +518,90 @@
         "display_name": "Onite",
         "chance_numerator": 1,
         "chance_denominator": 10
+    },
+    "rock_seed": {
+    "display_name": "Rock Seed",
+    "chance_numerator": 1,
+    "chance_denominator": 124
+    },
+    "wraith": {
+        "display_name": "Wraith",
+        "chance_numerator": 1,
+        "chance_denominator": 142
+    },
+    "fruite": {
+        "display_name": "Fruite",
+        "chance_numerator": 1,
+        "chance_denominator": 290
+    },
+    "blue_gem_quill": {
+        "display_name": "Blue Gem Quill",
+        "chance_numerator": 1,
+        "chance_denominator": 375
+    },
+    "duquack": {
+        "display_name": "Duquack",
+        "chance_numerator": 1,
+        "chance_denominator": 5586
+    },
+    "onyx": {
+        "display_name": "Onyx",
+        "chance_numerator": 1,
+        "chance_denominator": 6666
+    },
+    "lucky_cat": {
+        "display_name": "Lucky Cat",
+        "chance_numerator": 1,
+        "chance_denominator": 1111
+    },
+    "aurelia_no_ki_ore": {
+        "display_name": "Aurelia-no-Ki Ore",
+        "chance_numerator": 1,
+        "chance_denominator": 185
+    },
+    "sakuranite": {
+        "display_name": "Sakuranite",
+        "chance_numerator": 1,
+        "chance_denominator": 244
+    },
+    "heat_steel": {
+        "display_name": "Heat Steel",
+        "chance_numerator": 1,
+        "chance_denominator": 272
+    },
+    "sealed_curse_ore": {
+        "display_name": "Sealed Curse Ore",
+        "chance_numerator": 1,
+        "chance_denominator": 333
+    },
+    "zenstone_ore": {
+        "display_name": "Zenstone Ore",
+        "chance_numerator": 1,
+        "chance_denominator": 380
+    },
+    "azuryxite_ore": {
+        "display_name": "Azuryxite Ore",
+        "chance_numerator": 1,
+        "chance_denominator": 485
+    },
+    "sun_stone_ore": {
+        "display_name": "Sun Stone Ore",
+        "chance_numerator": 1,
+        "chance_denominator": 390
+    },
+    "roosite_ore": {
+        "display_name": "Roosite Ore",
+        "chance_numerator": 1,
+        "chance_denominator": 492
+    },
+    "meteorite_ore": {
+        "display_name": "Meteorite Ore",
+        "chance_numerator": 1,
+        "chance_denominator": 570
+    },
+    "heavenly_orb_ore": {
+        "display_name": "Heavenly Orb Ore",
+        "chance_numerator": 1,
+        "chance_denominator": 777
     }
 }
