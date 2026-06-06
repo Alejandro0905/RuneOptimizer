@@ -22,6 +22,25 @@ class RuneOptimizerApp:
         self.root.resizable(False, False)
 
         self.runes = []
+        # Auto-load backup if exists
+        if os.path.exists("runas_backup.json"):
+            try:
+                with open("runas_backup.json", 'r', encoding='utf-8') as f:
+                    runes_data = json.load(f)
+                    for rune_data in runes_data:
+                        self.runes.append({
+                            'name': rune_data['name'],
+                            'code': rune_data['code'],
+                            'stats': rune_data['stats']
+                        })
+                    if self.runes:
+                        self.next_rune_number = max(
+                            [int(r['name'].split()[1]) for r in self.runes if r['name'].startswith('Rune ')],
+                            default=0
+                        ) + 1
+                        self.update_rune_list()
+            except:
+                pass
         self.next_rune_number = 1
 
         self.pickaxes = {}
@@ -50,8 +69,22 @@ class RuneOptimizerApp:
         self.load_json_data()
         self.set_default_parameters()  # Load default parameters on startup
 
-        frame_list = ttk.LabelFrame(root, text="Rune List", padding=10)
-        frame_list.pack(fill="both", expand=True, padx=10, pady=10)
+        # Frame superior con título y botones
+        top_frame = ttk.Frame(root)
+        top_frame.pack(fill="x", padx=10, pady=(10, 0))
+
+        ttk.Label(top_frame, text="Rune List", font=("Segoe UI", 10, "bold")).pack(side="left")
+
+        # Botones SOLO arriba a la derecha
+        btn_save = ttk.Button(top_frame, text="Save Runas", command=self.save_runes_to_file)
+        btn_save.pack(side="right", padx=2)
+
+        btn_load = ttk.Button(top_frame, text="Load Runas", command=self.load_runes_from_file)
+        btn_load.pack(side="right", padx=2)
+
+        # Frame para la lista
+        frame_list = ttk.Frame(root, padding=10)
+        frame_list.pack(fill="both", expand=True, padx=10, pady=(5, 10))
 
         self.listbox = tk.Listbox(frame_list, height=12, font=("Segoe UI", 10))
         self.listbox.pack(side="left", fill="both", expand=True)
@@ -76,6 +109,8 @@ class RuneOptimizerApp:
         btn_modify_params.pack(side="right", padx=5)
 
         # Status label and result text removed per user request
+        # At the end of __init__, after creating all widgets
+        self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     def load_json_data(self):
         base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -285,11 +320,20 @@ class RuneOptimizerApp:
         fungi_potion_power = 0.15 if getattr(self, 'fungi_potion', False) else 0.0
         fungi_potion_speed = 0.20 if getattr(self, 'fungi_potion', False) else 0.0
         fungi_potion_luck = 0.15 if getattr(self, 'fungi_potion', False) else 0.0
+
+        # Lucky Cat Buff: +5% luck, +5% yield
+        lucky_cat_luck = 0.05 if getattr(self, 'lucky_cat_buff', False) else 0.0
+        lucky_cat_yield = 0.05 if getattr(self, 'lucky_cat_buff', False) else 0.0
+
+        # Starite Buff: +4% luck, +6% yield
+        starite_luck = 0.04 if getattr(self, 'starite_buff', False) else 0.0
+        starite_yield = 0.06 if getattr(self, 'starite_buff', False) else 0.0
         
         # Total boost sums
-        total_luck_boost = angel_race_bonus + supporter_gp_bonus + luck_potion_bonus + luck_totem_bonus + fungi_potion_luck
+        total_luck_boost = angel_race_bonus + supporter_gp_bonus + luck_potion_bonus + luck_totem_bonus + fungi_potion_luck + lucky_cat_luck + starite_luck
         total_mining_power_boost = mining_potion_power + mining_totem_power + fungi_potion_power
         total_swift_mining_boost = mining_potion_speed + mining_totem_speed + fungi_potion_speed
+        total_yield_boost = lucky_cat_yield + starite_yield
 
         print(f"Boost Summary:")
         print(f"  Total Luck Boost: {total_luck_boost * 100:.0f}%")
@@ -336,6 +380,8 @@ class RuneOptimizerApp:
                     sum_luck += total_luck_boost
                     sum_mining_power += total_mining_power_boost
                     sum_swift_mining += total_swift_mining_boost
+                    # Add yield boost from buffs
+                    sum_yield += total_yield_boost
                     
                     # Title bonuses
                     if title == "Master Miner":
@@ -413,6 +459,7 @@ class RuneOptimizerApp:
                             'total_luck_boost': total_luck_boost,
                             'total_mining_power_boost': total_mining_power_boost,
                             'total_swift_mining_boost': total_swift_mining_boost,
+                            'total_yield_boost': total_yield_boost,
                         }
                 except Exception as e:
                     print(f"ERROR in combination {combo_idx}: {e}")
@@ -438,6 +485,8 @@ class RuneOptimizerApp:
             boost_lines.append(f"  Mining Power Boost: {m['total_mining_power_boost']*100:.0f}%")
         if m['total_swift_mining_boost'] > 0:
             boost_lines.append(f"  Swift Mining Boost: {m['total_swift_mining_boost']*100:.0f}%")
+        if m.get('total_yield_boost', 0) > 0:
+            boost_lines.append(f"  Yield Boost: {m['total_yield_boost']*100:.0f}%")
         
         boosts_msg = "\n".join(boost_lines) if boost_lines else "  None"
         
@@ -513,6 +562,8 @@ class RuneOptimizerApp:
         self.luck_totem_var = tk.BooleanVar(value=False)
         self.mining_totem_var = tk.BooleanVar(value=False)
         self.supporter_gp_var = tk.BooleanVar(value=False)
+        self.lucky_cat_buff_var = tk.BooleanVar(value=False)
+        self.starite_buff_var = tk.BooleanVar(value=False)
 
         # Column 1
         col1 = ttk.Frame(frame_boosts)
@@ -526,10 +577,12 @@ class RuneOptimizerApp:
         # Column 2
         col2 = ttk.Frame(frame_boosts)
         col2.pack(side="left", fill="x", expand=True, padx=5)
-        
+
         ttk.Checkbutton(col2, text="Luck Totem", variable=self.luck_totem_var).pack(anchor="w", pady=2)
         ttk.Checkbutton(col2, text="Mining Totem", variable=self.mining_totem_var).pack(anchor="w", pady=2)
         ttk.Checkbutton(col2, text="Supporter GP", variable=self.supporter_gp_var).pack(anchor="w", pady=2)
+        ttk.Checkbutton(col2, text="Lucky Cat Buff", variable=self.lucky_cat_buff_var).pack(anchor="w", pady=2)
+        ttk.Checkbutton(col2, text="Starite Buff", variable=self.starite_buff_var).pack(anchor="w", pady=2)
 
         rock_display_to_id = {rock_data.get("display_name", rock_id): rock_id for rock_id, rock_data in self.rocks.items()}
         ore_display_to_id = {}
@@ -717,6 +770,8 @@ class RuneOptimizerApp:
             self.luck_totem = self.luck_totem_var.get()
             self.mining_totem = self.mining_totem_var.get()
             self.supporter_gp = self.supporter_gp_var.get()
+            self.lucky_cat_buff = self.lucky_cat_buff_var.get()
+            self.starite_buff = self.starite_buff_var.get()
             
             param_window.destroy()
 
@@ -725,6 +780,88 @@ class RuneOptimizerApp:
 
         btn_cancel = ttk.Button(frame_actions, text="Cancel", command=param_window.destroy)
         btn_cancel.pack(side="right", padx=5)
+
+    def save_runes_to_file(self):
+        """Save all runes to a JSON file"""
+        from tkinter import filedialog
+        
+        file_path = filedialog.asksaveasfilename(
+            defaultextension=".json",
+            filetypes=[("JSON files", "*.json"), ("All files", "*.*")],
+            title="Save Runas"
+        )
+        
+        if file_path:
+            try:
+                # Prepare data to save
+                runes_data = []
+                for rune in self.runes:
+                    runes_data.append({
+                        'name': rune['name'],
+                        'code': rune['code'],
+                        'stats': rune['stats']
+                    })
+                
+                with open(file_path, 'w', encoding='utf-8') as f:
+                    json.dump(runes_data, f, indent=2, ensure_ascii=False)
+                
+                messagebox.showinfo("Save Runas", f"Runas saved successfully!\n{file_path}")
+            except Exception as e:
+                messagebox.showerror("Save Error", f"Failed to save runas: {e}")
+
+    def load_runes_from_file(self):
+        """Load runes from a JSON file"""
+        from tkinter import filedialog
+        
+        file_path = filedialog.askopenfilename(
+            filetypes=[("JSON files", "*.json"), ("All files", "*.*")],
+            title="Load Runas"
+        )
+        
+        if file_path:
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    runes_data = json.load(f)
+                
+                # Clear current runes
+                self.runes = []
+                self.next_rune_number = 1
+                
+                # Load runes
+                for rune_data in runes_data:
+                    self.runes.append({
+                        'name': rune_data['name'],
+                        'code': rune_data['code'],
+                        'stats': rune_data['stats']
+                    })
+                    # Update next_rune_number to avoid duplicate names
+                    if rune_data['name'].startswith('Rune '):
+                        try:
+                            num = int(rune_data['name'].split()[1])
+                            if num >= self.next_rune_number:
+                                self.next_rune_number = num + 1
+                        except:
+                            pass
+                
+                self.update_rune_list()
+                messagebox.showinfo("Load Runas", f"Loaded {len(self.runes)} runas successfully!\n{file_path}")
+            except Exception as e:
+                messagebox.showerror("Load Error", f"Failed to load runas: {e}")
+    def on_closing(self):
+        """Auto-save runes when closing the program"""
+        try:
+            with open("runas_backup.json", 'w', encoding='utf-8') as f:
+                runes_data = []
+                for rune in self.runes:
+                    runes_data.append({
+                        'name': rune['name'],
+                        'code': rune['code'],
+                        'stats': rune['stats']
+                    })
+                json.dump(runes_data, f, indent=2, ensure_ascii=False)
+        except:
+            pass
+        self.root.destroy()
 
 if __name__ == "__main__":
     root = tk.Tk()
