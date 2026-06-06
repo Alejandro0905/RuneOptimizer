@@ -263,13 +263,46 @@ class RuneOptimizerApp:
             messagebox.showinfo("Optimize", f"Add at least {self.rune_slots} runes before optimizing.")
             return
 
+        # Calculate boost values based on checkboxes
+        # Angel Race: +30% luck
+        angel_race_bonus = 0.30 if getattr(self, 'angel_race', False) else 0.0
+        # Supporter GP: +10% luck
+        supporter_gp_bonus = 0.10 if getattr(self, 'supporter_gp', False) else 0.0
+        # Luck Potion: +20% luck
+        luck_potion_bonus = 0.20 if getattr(self, 'luck_potion', False) else 0.0
+        # Luck Totem: +25% luck
+        luck_totem_bonus = 0.25 if getattr(self, 'luck_totem', False) else 0.0
+        
+        # Mining Potion: +10% mining power, +15% swing speed
+        mining_potion_power = 0.10 if getattr(self, 'mining_potion', False) else 0.0
+        mining_potion_speed = 0.15 if getattr(self, 'mining_potion', False) else 0.0
+        
+        # Mining Totem: +15% mining power, +20% swing speed
+        mining_totem_power = 0.15 if getattr(self, 'mining_totem', False) else 0.0
+        mining_totem_speed = 0.20 if getattr(self, 'mining_totem', False) else 0.0
+        
+        # Fungi Potion: +15% mining power, +20% swing speed, +15% luck
+        fungi_potion_power = 0.15 if getattr(self, 'fungi_potion', False) else 0.0
+        fungi_potion_speed = 0.20 if getattr(self, 'fungi_potion', False) else 0.0
+        fungi_potion_luck = 0.15 if getattr(self, 'fungi_potion', False) else 0.0
+        
+        # Total boost sums
+        total_luck_boost = angel_race_bonus + supporter_gp_bonus + luck_potion_bonus + luck_totem_bonus + fungi_potion_luck
+        total_mining_power_boost = mining_potion_power + mining_totem_power + fungi_potion_power
+        total_swift_mining_boost = mining_potion_speed + mining_totem_speed + fungi_potion_speed
+
+        print(f"Boost Summary:")
+        print(f"  Total Luck Boost: {total_luck_boost * 100:.0f}%")
+        print(f"  Total Mining Power Boost: {total_mining_power_boost * 100:.0f}%")
+        print(f"  Total Swift Mining Boost: {total_swift_mining_boost * 100:.0f}%")
+        print("="*60 + "\n")
+
         best_combo = None
         best_score = float('inf')
         best_metrics = None
         best_title = None
-        best_title = float('inf')
 
-        # Generate all combinations first
+        # Generate all combinations
         all_combos = list(combinations(self.runes, self.rune_slots))
         print(f"Total combinations found: {len(all_combos)}\n")
         
@@ -282,7 +315,7 @@ class RuneOptimizerApp:
                     combo_names = [rune['name'] for rune in combo]
                     print(f"Runes: {combo_names}")
                     
-                    # 2. Sums of attributes (convert rune % to decimals)
+                    # Sums of attributes from runes
                     sum_luck = 0.0
                     sum_mining_power = 0.0
                     sum_swift_mining = 0.0
@@ -298,49 +331,57 @@ class RuneOptimizerApp:
                                 sum_swift_mining += dec
                             elif attr == "Yield":
                                 sum_yield += dec
-                    #Titutlo
+                    
+                    # Add boost bonuses
+                    sum_luck += total_luck_boost
+                    sum_mining_power += total_mining_power_boost
+                    sum_swift_mining += total_swift_mining_boost
+                    
+                    # Title bonuses
                     if title == "Master Miner":
                         sum_mining_power += self.master_miner_level * 0.05
-
                     elif title == "Dedicated Player":
                         sum_luck += self.dedicated_player_level * 0.08
 
-                    # 3. Effective variables
+                    # Effective variables
                     mining_power_eff = self.pickaxe_damage * (1 + sum_mining_power)
                     swing_time = 1.18 / (1 + self.pickaxe_speed_bonus + sum_swift_mining)
                     times_to_break_raw = self.hp_rock / mining_power_eff if mining_power_eff > 0 else float('inf')
                     times_to_break = math.ceil(times_to_break_raw)
                     t_per_rock = times_to_break * swing_time
 
-                    # 4. Effective luck
+                    # Effective luck
                     pickaxe_luck_decimal = self.pickaxe_luck / 100.0
                     luck_eff = 1 + pickaxe_luck_decimal + sum_luck
                     true_luck = self.rock_luck * luck_eff
                     
-                    print(f"  pickaxe_luck_decimal: {pickaxe_luck_decimal}")
-                    print(f"  luck_eff: 1 + {pickaxe_luck_decimal} + {sum_luck} = {luck_eff}")
-                    print(f"  true_luck: {self.rock_luck} * {luck_eff} = {true_luck}")
+                    print(f"  sum_luck (with boosts): {sum_luck}")
+                    print(f"  sum_mining_power (with boosts): {sum_mining_power}")
+                    print(f"  sum_swift_mining (with boosts): {sum_swift_mining}")
+                    print(f"  mining_power_eff: {mining_power_eff}")
+                    print(f"  swing_time: {swing_time}")
+                    print(f"  times_to_break: {times_to_break}")
+                    print(f"  t_per_rock: {t_per_rock}")
+                    print(f"  luck_eff: {luck_eff}")
+                    print(f"  true_luck: {true_luck}")
 
-                    # 5. Base ore probability
+                    # Base ore probability
                     prob_ore = min((self.chance_numerator * true_luck) / self.chance_denominator if self.chance_denominator > 0 else 0, 1)
 
-                    # 6. Yield effective
+                    # Yield effective
                     yield_eff = sum_yield
 
-                    # 7. ore_count is already a list
+                    # ore_count scenarios
                     ore_counts = self.ore_count if isinstance(self.ore_count, list) and self.ore_count else [1]
-
-                    # 8. success probability per scenario
                     k = len(ore_counts)
                     scenario_probability = 1.0 / k
                     prob_ore_per_rock = 0.0
                     for N in ore_counts:
-                        # success_probability(N) = yield_eff * (1 - (1 - prob_ore)^(N + 1)) + (1 - yield_eff) * (1 - (1 - prob_ore)^N)
                         p = prob_ore
                         succ = yield_eff * (1 - pow((1 - p), (N + 1))) + (1 - yield_eff) * (1 - pow((1 - p), N))
                         prob_ore_per_rock += scenario_probability * succ
 
-                    # 10. average_t_per_ore
+                    # Average time per ore
                     if prob_ore_per_rock <= 1e-10:
                         average_t_per_ore = float('inf')
                     else:
@@ -350,7 +391,7 @@ class RuneOptimizerApp:
                     print(f"  prob_ore_per_rock: {prob_ore_per_rock}")
                     print(f"  average_t_per_ore: {average_t_per_ore}")
 
-                    # select best (minimum average_t_per_ore)
+                    # Select best (minimum average_t_per_ore)
                     if average_t_per_ore < best_score:
                         best_score = average_t_per_ore
                         best_combo = combo
@@ -369,6 +410,9 @@ class RuneOptimizerApp:
                             'sum_mining_power': sum_mining_power,
                             'sum_swift_mining': sum_swift_mining,
                             'sum_yield': sum_yield,
+                            'total_luck_boost': total_luck_boost,
+                            'total_mining_power_boost': total_mining_power_boost,
+                            'total_swift_mining_boost': total_swift_mining_boost,
                         }
                 except Exception as e:
                     print(f"ERROR in combination {combo_idx}: {e}")
@@ -383,25 +427,33 @@ class RuneOptimizerApp:
             messagebox.showinfo("Optimize", "No valid rune combination found.")
             return
 
-        # 12. display results for best combo
-        combo = best_combo
+        # Display results for best combo
         m = best_metrics
-        msg = f"Best combination (average_t_per_ore: {m['average_t_per_ore']:.6f})\n\n"
-        msg = f"Average Time Per Ore: {m['average_t_per_ore']:.6f}\n\n"
-
+        
+        # Build boost summary string
+        boost_lines = []
+        if m['total_luck_boost'] > 0:
+            boost_lines.append(f"  Luck Boost: {m['total_luck_boost']*100:.0f}%")
+        if m['total_mining_power_boost'] > 0:
+            boost_lines.append(f"  Mining Power Boost: {m['total_mining_power_boost']*100:.0f}%")
+        if m['total_swift_mining_boost'] > 0:
+            boost_lines.append(f"  Swift Mining Boost: {m['total_swift_mining_boost']*100:.0f}%")
+        
+        boosts_msg = "\n".join(boost_lines) if boost_lines else "  None"
+        
+        msg = f"Average Time Per Ore: {m['average_t_per_ore']:.2f} s\n\n"
         msg += f"Title: {best_title}\n\n"
-
+        msg += f"Active Boosts:\n{boosts_msg}\n\n"
         msg += "Runes:\n"
-
-        for rune in combo:
-            msg += f"{rune['name']} - {rune['code']}\n"
+        for rune in best_combo:
+            msg += f"  {rune['name']} - {rune['code']}\n"
 
         messagebox.showinfo("Optimization Result", msg)
 
     def open_modify_parameters_window(self):
         param_window = tk.Toplevel(self.root)
         param_window.title("Modify Parameters")
-        param_window.geometry("500x410")
+        param_window.geometry("500x500")
         param_window.resizable(False, False)
         param_window.transient(self.root)
         param_window.grab_set()
@@ -419,7 +471,7 @@ class RuneOptimizerApp:
         if self.selected_pickaxe_id and self.selected_pickaxe_id in pickaxe_display_names:
             pickaxe_combo.set(self.selected_pickaxe_id)
 
-        # Frame Filter by World (debajo de Pickaxe, antes de Rock)
+        # Frame Filter by World
         frame_world = ttk.Frame(param_window)
         frame_world.pack(fill="x", padx=15, pady=6)
         ttk.Label(frame_world, text="Filter:", width=12).pack(side="left")
@@ -448,6 +500,36 @@ class RuneOptimizerApp:
         ore_var = tk.StringVar()
         ore_combo = ttk.Combobox(frame_ore, textvariable=ore_var, values=[], state="readonly", width=25, height=10)
         ore_combo.pack(side="left", padx=5)
+
+        # Frame for Checkboxes (Angel Race + Boosts) - Two columns
+        frame_boosts = ttk.LabelFrame(param_window, text="Active Boosts", padding=5)
+        frame_boosts.pack(fill="x", padx=15, pady=6)
+
+        # Variables for checkboxes (False by default)
+        self.angel_race_var = tk.BooleanVar(value=False)
+        self.luck_potion_var = tk.BooleanVar(value=False)
+        self.mining_potion_var = tk.BooleanVar(value=False)
+        self.fungi_potion_var = tk.BooleanVar(value=False)
+        self.luck_totem_var = tk.BooleanVar(value=False)
+        self.mining_totem_var = tk.BooleanVar(value=False)
+        self.supporter_gp_var = tk.BooleanVar(value=False)
+
+        # Column 1
+        col1 = ttk.Frame(frame_boosts)
+        col1.pack(side="left", fill="x", expand=True, padx=5)
+        
+        ttk.Checkbutton(col1, text="Angel Race", variable=self.angel_race_var).pack(anchor="w", pady=2)
+        ttk.Checkbutton(col1, text="Luck Potion", variable=self.luck_potion_var).pack(anchor="w", pady=2)
+        ttk.Checkbutton(col1, text="Mining Potion", variable=self.mining_potion_var).pack(anchor="w", pady=2)
+        ttk.Checkbutton(col1, text="Fungi Potion", variable=self.fungi_potion_var).pack(anchor="w", pady=2)
+
+        # Column 2
+        col2 = ttk.Frame(frame_boosts)
+        col2.pack(side="left", fill="x", expand=True, padx=5)
+        
+        ttk.Checkbutton(col2, text="Luck Totem", variable=self.luck_totem_var).pack(anchor="w", pady=2)
+        ttk.Checkbutton(col2, text="Mining Totem", variable=self.mining_totem_var).pack(anchor="w", pady=2)
+        ttk.Checkbutton(col2, text="Supporter GP", variable=self.supporter_gp_var).pack(anchor="w", pady=2)
 
         rock_display_to_id = {rock_data.get("display_name", rock_id): rock_id for rock_id, rock_data in self.rocks.items()}
         ore_display_to_id = {}
@@ -626,6 +708,16 @@ class RuneOptimizerApp:
                 on_ore_selected()
             self.master_miner_level = int(master_var.get())
             self.dedicated_player_level = int(dedicated_var.get())
+            
+            # Save boost variables to self so they can be used in optimize_runes
+            self.angel_race = self.angel_race_var.get()
+            self.luck_potion = self.luck_potion_var.get()
+            self.mining_potion = self.mining_potion_var.get()
+            self.fungi_potion = self.fungi_potion_var.get()
+            self.luck_totem = self.luck_totem_var.get()
+            self.mining_totem = self.mining_totem_var.get()
+            self.supporter_gp = self.supporter_gp_var.get()
+            
             param_window.destroy()
 
         btn_save = ttk.Button(frame_actions, text="Save Parameters", command=save_parameters)
